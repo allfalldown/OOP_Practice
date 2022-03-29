@@ -4,11 +4,13 @@
 using namespace std;
 
 int main(){
+    int number, count = 0, temp_numerator, temp_denominator;
     Fraction frac1 = Fraction();
     Fraction frac2 = Fraction();
-    cout << "First: ";
+    Fraction list[100000];
+    cout << "First fraction: ";
     frac1.getinput();
-    cout << "Second: ";
+    cout << "Second fraction: ";
     frac2.getinput();
     cout << "All fraction: " << endl;
     frac1.display();
@@ -17,5 +19,22 @@ int main(){
     frac1.minus(frac1, frac2);
     frac1.multify(frac1, frac2);
     frac1.division(frac1, frac2);
-    return 0;
+    cout << "===============" << endl;
+    cout << "Number of fractions: "; cin >> number;
+    while (count < number){
+        cout << "Fraction: "; cin >> temp_numerator >> temp_denominator;
+        if (temp_denominator == 0)
+            cout << "Invalid fraction" << endl;
+        else{
+            list[count] = Fraction(temp_numerator,  temp_denominator);
+            count++;
+        }
+    }
+    
+    sort(list,number);
+    cout << "After sorting all fraction: " << endl;
+    for (int i=0; i<number; i++){
+        list[i].display();
+    }
+
 }

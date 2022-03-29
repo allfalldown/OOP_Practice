@@ -16,5 +16,9 @@ class Fraction{
         void minus(Fraction frac1, Fraction frac2);
         void multify(Fraction frac1, Fraction frac2);
         void division(Fraction frac1, Fraction frac2);
-
+        bool compare(Fraction frac1, Fraction frac2);
+        void swap(Fraction &frac1, Fraction &frac2);
+        void sort(Fraction *list, int number);
 };
+
+void sort(Fraction *list, int number);
