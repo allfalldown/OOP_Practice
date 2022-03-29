@@ -1,7 +1,7 @@
 #include "Student.cpp"
 
 int main(){
-    Student list[10000]; int number, check = 0;
+    Student list[10000]; int number, check = 0, count = 0;
     //gahter all student's info 
     cout << "Number of student: "; cin >> number;
     for (int i=0; i<number; i++)
@@ -38,14 +38,15 @@ int main(){
     
     cout << endl << "=========o0o=========" << endl;
     //display students being higher than 28
-    check = 0;
     cout << "Information of female students being passed exam" << endl;
     for (int i=0; i<number; i++)
         if (list[i].isPass()){
             list[i].display();
-            check = 1;
+            count++;
         }
-    if (check == 0)
+    if (count > 0)
+        cout << "Number of students who pass: " << count << endl;
+    else
         cout << "None of all" << endl;        
 
     return 0;
