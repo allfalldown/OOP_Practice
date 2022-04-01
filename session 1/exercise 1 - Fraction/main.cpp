@@ -36,5 +36,5 @@ int main(){
     for (int i=0; i<number; i++){
         list[i].display();
     }
-
+    return 0;
 }
